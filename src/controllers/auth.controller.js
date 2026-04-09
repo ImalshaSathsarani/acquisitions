@@ -5,7 +5,6 @@ import { jwttoken } from '#utils/jwt.js';
 import { signInSchema, signupSchema } from '#validations/auth.validation.js';
 import logger from '#config/logger.js';
 
-
 export const signup = async (req, res, next) => {
   try {
     const validationResult = signupSchema.safeParse(req.body);
