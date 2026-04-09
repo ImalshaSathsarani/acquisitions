@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "imports": {
+    "#src/*": "./src/*",
     "#config/*": "./src/config/*",
     "#models/*": "./src/models/*",
     "#routes/*": "./src/routes/*",
@@ -15,7 +16,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch src/index.js",
-    "start":"node src/index.js",
+    "start": "node src/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
@@ -24,7 +25,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": " drizzle-kit studio",
     "dev:docker": "bash ./scripts/dev.sh",
-    "prod:docker": "bash ./scripts/prod.sh"
+    "prod:docker": "bash ./scripts/prod.sh",
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "keywords": [],
   "author": "",
@@ -48,10 +50,13 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "cross-env": "^10.1.0",
     "drizzle-kit": "^0.31.10",
     "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
-    "prettier": "^3.8.1"
+    "jest": "^30.3.0",
+    "prettier": "^3.8.1",
+    "supertest": "^7.2.2"
   }
 }
