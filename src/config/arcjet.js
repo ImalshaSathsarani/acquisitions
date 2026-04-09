@@ -13,15 +13,15 @@ const aj = arcjet({
       // Block all bots except the following
       allow: [
         'CATEGORY:SEARCH_ENGINE', // Google, Bing, etc
-        'CATEGORY:PREVIEW' 
+        'CATEGORY:PREVIEW',
       ],
     }),
     // Create a token bucket rate limit. Other algorithms are supported.
     slidingWindow({
       mode: 'LIVE',
       interval: '2s',
-      max: 5
-    })
+      max: 5,
+    }),
   ],
 });
 

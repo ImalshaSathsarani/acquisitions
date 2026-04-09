@@ -1,9 +1,9 @@
 import request from 'supertest';
 import app from '#src/app.js';
 
-describe('API Endpoints', ()=> {
-  describe('GET /health', ()=> {
-    it('should return health status', async ()=> {
+describe('API Endpoints', () => {
+  describe('GET /health', () => {
+    it('should return health status', async () => {
       const response = await request(app).get('/health').expect(200);
       expect(response.body).toHaveProperty('status', 'OK');
       expect(response.body).toHaveProperty('timestamp');
@@ -11,11 +11,13 @@ describe('API Endpoints', ()=> {
     });
   });
 
-  describe('GET /api', ()=> {
-    it('should return API message', async ()=> {
+  describe('GET /api', () => {
+    it('should return API message', async () => {
       const response = await request(app).get('/api').expect(200);
-      expect(response.body).toHaveProperty('message',  'Acquisitions API is running!');
-            
+      expect(response.body).toHaveProperty(
+        'message',
+        'Acquisitions API is running!'
+      );
     });
   });
 
@@ -26,8 +28,4 @@ describe('API Endpoints', ()=> {
       expect(response.body).toHaveProperty('error', 'Route not found');
     });
   });
-
-    
-
-
 });

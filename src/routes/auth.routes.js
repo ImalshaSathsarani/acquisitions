@@ -10,4 +10,3 @@ router.post('/sign-in', signIn);
 router.post('/sign-out', signOut);
 
 export default router;
-
