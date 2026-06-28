@@ -16,6 +16,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+// Streaming HTTP traffic diagnostics into structured logs
+
 app.use(
   morgan('combined', {
     stream: { write: message => logger.info(message.trim()) },
