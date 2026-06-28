@@ -1,4 +1,5 @@
 node_modules
+.env
 .env.*
 .neon_local/
 !.env.example
